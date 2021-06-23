@@ -8,14 +8,14 @@ let userInfo = {
 };
 
 // Pre-load our database with fake users
-beforeAll(async (done) => {
+beforeAll(async () => {
   await db.sync();
   await users.create(userInfo.admin);
-  done();
+  
 });
-afterAll(async (done) => {
+afterAll(async () => {
   await db.drop();
-  done();
+  
 })
 
 describe('Auth Middleware', () => {

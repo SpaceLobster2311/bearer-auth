@@ -14,13 +14,13 @@ let users = {
   user: { username: 'user', password: 'password' },
 };
 
-beforeAll(async (done) => {
+beforeAll(async () => {
   await db.sync();
-  done();
+  
 });
-afterAll(async (done) => {
+afterAll(async () => {
   await db.drop();
-  done();
+  
 });
 
 
